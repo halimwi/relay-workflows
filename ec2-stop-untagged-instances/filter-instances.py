@@ -33,4 +33,5 @@ print(*[instance_id for instance_id in to_keep], sep = "\n")
 print('\nFound {} instances without tags to stop:'.format(len(to_stop)))
 print(*[instance_id for instance_id in to_stop], sep = "\n") 
 
-relay.outputs.set('instanceIDs', to_stop)
+to_stop_string = "".join(to_stop)
+relay.outputs.set('instanceIDs', to_stop_string)
